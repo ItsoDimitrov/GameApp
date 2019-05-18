@@ -13,4 +13,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\GameApp.Data.Models\GameApp.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\GameApp.Data\GameApp.Data.csproj" />
+  </ItemGroup>
+
 </Project>
