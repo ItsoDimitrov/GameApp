@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameApp.Data", "Data\GameAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameApp.Data.Models", "Data\GameApp.Data.Models\GameApp.Data.Models.csproj", "{B8304553-BFDD-4E51-B5D0-8C8F924EB38F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0EABA844-C13E-40A2-BB53-CEE1F4DE62CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Tests\Sandbox\Sandbox.csproj", "{BFB7AF28-7657-4483-9EE0-02F24EF69603}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{B8304553-BFDD-4E51-B5D0-8C8F924EB38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8304553-BFDD-4E51-B5D0-8C8F924EB38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8304553-BFDD-4E51-B5D0-8C8F924EB38F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFB7AF28-7657-4483-9EE0-02F24EF69603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB7AF28-7657-4483-9EE0-02F24EF69603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFB7AF28-7657-4483-9EE0-02F24EF69603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFB7AF28-7657-4483-9EE0-02F24EF69603}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{44A44755-0EDF-46AF-A971-0BEBF9A894BF} = {1B391AE0-77B0-4559-8A92-C0DBB046EC09}
 		{B8304553-BFDD-4E51-B5D0-8C8F924EB38F} = {1B391AE0-77B0-4559-8A92-C0DBB046EC09}
+		{BFB7AF28-7657-4483-9EE0-02F24EF69603} = {0EABA844-C13E-40A2-BB53-CEE1F4DE62CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA5D55B2-A932-459D-B03A-B4A68D4B11FE}

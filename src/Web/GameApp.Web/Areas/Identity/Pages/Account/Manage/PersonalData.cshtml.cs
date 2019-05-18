@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using GameApp.Web.Areas.Identity.Data;
+using GameApp.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
