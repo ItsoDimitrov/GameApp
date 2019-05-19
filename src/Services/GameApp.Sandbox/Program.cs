@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GameApp.Tools.Sandbox
+namespace GameApp.Sandbox
 {
     class Program
     {
