@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using GameApp.Web.Models;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +29,8 @@ namespace Sandbox
 
         private static void SandboxCode(IServiceProvider serviceProvider)
         {
-            throw new NotImplementedException();
+            var db = serviceProvider.GetService<GameAppContext>();
+            Console.WriteLine(db.Users.Count());
         }
 
         private static void ConfigureServices(ServiceCollection services)
