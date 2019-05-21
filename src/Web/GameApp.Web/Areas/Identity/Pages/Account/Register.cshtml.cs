@@ -59,6 +59,7 @@ namespace GameApp.Web.Areas.Identity.Pages.Account
 
         public void OnGet(string returnUrl = null)
         {
+            // TODO: If user is already logged in - redirect 
             ReturnUrl = returnUrl;
         }
 
