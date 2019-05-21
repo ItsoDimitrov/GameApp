@@ -41,7 +41,16 @@ namespace GameApp.Web
                 options.UseSqlServer(
                     this.Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<GameAppUser>()
+            services.AddDefaultIdentity<GameAppUser>(opt =>
+                {
+                    opt.Password.RequireDigit = false;
+                    opt.Password.RequireLowercase = false;
+                    opt.Password.RequiredLength = 3;
+                    opt.Password.RequireNonAlphanumeric = false;
+                    opt.Password.RequireUppercase = false;
+                    opt.Password.RequiredUniqueChars = 0;
+                    
+                })
                 .AddEntityFrameworkStores<GameAppContext>();
 
 
