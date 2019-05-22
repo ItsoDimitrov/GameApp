@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GameApp.Web.Models;
+using GameApp.Web.Services;
+using GameApp.Web.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -53,8 +55,11 @@ namespace GameApp.Web
                 })
                 .AddEntityFrameworkStores<GameAppContext>();
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //Application services
+            services.AddScoped<IHomeService,HomeService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
