@@ -4,14 +4,16 @@ using GameApp.Web.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameApp.Data.Migrations
 {
     [DbContext(typeof(GameAppContext))]
-    partial class GameAppContextModelSnapshot : ModelSnapshot
+    [Migration("20190524234412_AddedImagesForGameModel")]
+    partial class AddedImagesForGameModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
