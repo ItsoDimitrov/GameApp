@@ -21,6 +21,7 @@ namespace GameApp.Web.Controllers
         public IActionResult Index()
         {
             var indexGamesViewModel = _homeService.GetIndexGames();
+
             return View(indexGamesViewModel);
         }
 

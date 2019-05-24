@@ -13,7 +13,7 @@ namespace GameApp.Web.Models.ViewModels.Home
         public string GameName { get; set; }
 
         public string GameDescription { get; set; }
-        //public ICollection<Genre> Genres { get; set; } // If we want Genres to be displayed !
+        //public ICollection<Genre> Genres { get; set; } // If want Genres to be displayed !
        
     }
 }
