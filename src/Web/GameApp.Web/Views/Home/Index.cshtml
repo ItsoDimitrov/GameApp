@@ -34,6 +34,10 @@
                             <div class="card-body">
                                 <h4 class="card-title">@game.GameName</h4>
                                 <p class="card-text">@game.GameDescription</p>
+                                @*@foreach (var genre in @game.Genres)
+                                {
+                                    <h1>@genre.Tag</h1>
+                                }*@
                             </div>
                             <div class="card-footer">
                                 <a asp-controller="Game" asp-action="Details" asp-route-id="@game.Id" class="btn btn-primary">Find Out More!</a>

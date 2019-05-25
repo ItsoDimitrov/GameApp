@@ -59,6 +59,7 @@ namespace GameApp.Web
 
             //Application services
             services.AddScoped<IHomeService,HomeService>();
+            services.AddScoped<IGameService,GameService>();
 
         }
 

@@ -1,28 +1,25 @@
-﻿
+﻿@model GameApp.Web.Models.ViewModels.Game.GameDetailViewModel
 @{
-    ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-info">Details </h1>
 <<div class="container">
     <div class="col-md-12">
         <div class="card badge-dark">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <h1 class="text-center">Game Title </h1>
+                        <h1 class="text-center">@Model.GameTitle</h1>
                         <div class="row">
                             <div class="text-center">
-                                <h1>Game Description </h1>
-                                <h1 class="small">A tactical game combining the turn-based combat of XCOM with story, exploration, stealth, and strategy. Take control of a team of Mutants navigating a post-human Earth. Created by a team including former HITMAN leads and the designer of PAYDAY.</h1>
-
+                               <h1 class="small">@Model.GameDescription</h1>
                             </div>
 
                         </div>
-                        <h1 class="text-left small">Game release Date</h1>
+                        <h1 class="text-left small">Game release Date:</h1>
+                        <p>@(Model.GameReleaseDate.Value.ToString("yyyy MMMM dd"))</p>
                         <h1 class="text-left small">Game popular tags </h1>
- 
+                        @*<h1>@Model.Genres.Count()</h1>*@
                     </div>
                     <div class="col-md-8">
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
