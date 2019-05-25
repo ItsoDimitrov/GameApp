@@ -34,8 +34,8 @@
                         <p class="card-text">@game.GameDescription</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Find Out More!</a>
-                    </div>
+                        <a asp-controller="Game" asp-action="Details" asp-route-id="@game.Id" class="btn btn-primary">Find Out More!</a>
+                    </div>  
                 </div>
             </div>
             }

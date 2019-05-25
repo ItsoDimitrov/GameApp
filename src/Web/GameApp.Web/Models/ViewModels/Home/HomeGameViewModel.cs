@@ -11,9 +11,9 @@ namespace GameApp.Web.Models.ViewModels.Home
         // View Model for games on index page
         public int Id { get; set; }
         public string GameName { get; set; }
-
         public string GameDescription { get; set; }
+        public ICollection<Image> Images { get; set; }
         //public ICollection<Genre> Genres { get; set; } // If want Genres to be displayed !
-       
+
     }
 }

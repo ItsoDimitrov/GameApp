@@ -14,6 +14,7 @@ namespace GameApp.Data.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string PosterURL { get; set; }
         public DateTime? ReleaseDate { get; set; }
         public ICollection<Genre> Genres { get; set; }
         public ICollection<Image> Images{ get; set; }
