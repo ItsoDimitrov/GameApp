@@ -12,7 +12,7 @@ namespace GameApp.Web.Models.ViewModels.Home
         public int Id { get; set; }
         public string GameName { get; set; }
         public string GameDescription { get; set; }
-        public ICollection<Image> Images { get; set; }
+        public string GamePoster { get; set; }
         //public ICollection<Genre> Genres { get; set; } // If want Genres to be displayed !
 
     }

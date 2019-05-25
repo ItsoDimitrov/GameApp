@@ -21,24 +21,28 @@
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
             <a href="#" class="btn btn-primary btn-lg">Call to action!</a>
         </header>
-        <div class="row text-center">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="row text-center">
 
 
-            @foreach (var game in Model.Games)
-            {
-                <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img class="card-img-top" src="images/battlefield_5_battlefield_2016_99685_1920x1080.jpg" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">@game.GameName</h4>
-                        <p class="card-text">@game.GameDescription</p>
+                @foreach (var game in Model.Games)
+                {
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="@game.GamePoster" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title">@game.GameName</h4>
+                                <p class="card-text">@game.GameDescription</p>
+                            </div>
+                            <div class="card-footer">
+                                <a asp-controller="Game" asp-action="Details" asp-route-id="@game.Id" class="btn btn-primary">Find Out More!</a>
+                            </div>  
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <a asp-controller="Game" asp-action="Details" asp-route-id="@game.Id" class="btn btn-primary">Find Out More!</a>
-                    </div>  
-                </div>
+                }
             </div>
-            }
-        </div>
+        }
+       
     </div>
 
