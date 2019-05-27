@@ -28,6 +28,7 @@ namespace GameApp.Web.Services
                     GameDescription = g.Description,
                     GamePoster = g.PosterURL,
                     
+                    
                 });
              var indexGamesViewModel = new HomeGamesViewModel
              {

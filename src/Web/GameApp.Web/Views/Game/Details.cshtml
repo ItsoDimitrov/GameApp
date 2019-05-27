@@ -19,7 +19,7 @@
                         <h1 class="text-left small">Game release Date:</h1>
                         <p>@(Model.GameReleaseDate.Value.ToString("yyyy MMMM dd"))</p>
                         <h1 class="text-left small">Game popular tags </h1>
-                        @*<h1>@Model.Genres.Count()</h1>*@
+                        <p>@string.Join(", ",@Model.Genres.Select(c => c.Tag))</p>
                     </div>
                     <div class="col-md-8">
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">

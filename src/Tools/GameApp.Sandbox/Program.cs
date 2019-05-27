@@ -32,6 +32,12 @@ namespace GameApp.Sandbox
         private static void SandboxCode(IServiceProvider serviceProvider)
         {
             var db = serviceProvider.GetService<GameAppContext>();
+            var game = db.Games.FirstOrDefault(g => g.Id == 9);
+            var gameGenres = db.Genres.Where(g => g.GameId == game.Id);
+            foreach (var gameGenre in gameGenres)
+            {
+                Console.WriteLine(gameGenre);
+            }
             //var game = new Game
             //{
             //    Name = "Interstellar Transport Company",

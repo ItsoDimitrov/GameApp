@@ -12,8 +12,8 @@ namespace GameApp.Web.Models.ViewModels.Game
         public string GameTitle { get; set; }
         public string GameDescription { get; set; }
         public DateTime? GameReleaseDate { get; set; }
-        //public ICollection<Genre> Genres { get; set; } TODO: Game Tags should be displayed too
-        //public GameImageDetailViewModel Images { get; set; }
+        public IQueryable<Genre> Genres { get; set; } /*TODO: Game Tags should be displayed too*/
+        //public GameImageDetailViewModel Images { get; set; } TODO: Game Images should be displayed ( not hardcoded) 
 
     }
 }
