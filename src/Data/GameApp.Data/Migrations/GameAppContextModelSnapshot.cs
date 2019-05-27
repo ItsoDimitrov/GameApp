@@ -120,7 +120,7 @@ namespace GameApp.Data.Migrations
 
                     b.HasIndex("GameId");
 
-                    b.ToTable("Image");
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

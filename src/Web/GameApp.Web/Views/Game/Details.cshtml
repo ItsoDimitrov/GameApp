@@ -22,28 +22,60 @@
                         <p>@string.Join(", ",@Model.Genres.Select(c => c.Tag))</p>
                     </div>
                     <div class="col-md-8">
-                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                      
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
+
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100" src="https://steamcdn-a.akamaihd.net/steam/apps/760060/ss_422c06d4911bb0a4c1f9dd010f4af26a06bbbf83.600x338.jpg?t=1558612909 Slide" alt="First slide">
-                                    <div class="carousel-caption d-none d-md-block">
+                                    <img class="d-block w-100" src=@Model.PosterUrl>
+                                </div>
+                                @foreach (var image in @Model.Images)
+                                {
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="@image.URL">
                                     </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="https://steamcdn-a.akamaihd.net/steam/apps/760060/ss_d2e76794f7064f55dda5ca66aa79e7b26271ff4c.600x338.jpg?t=1558612909 Slide" alt="Second slide">
-                                </div>
-                                <div class="carousel-caption d-none d-md-block">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="https://steamcdn-a.akamaihd.net/steam/apps/760060/ss_fd0d399c7c6d1823963a56b73e4964f9b52d4dc6.600x338.jpg?t=1558612909 Slide" alt="Third slide">
-                                    <div class="carousel-caption d-none d-md-block">
-                                    </div>
-                                </div>
+                                }
+                              
+
                             </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
+                        @*<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                           
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="@Model.PosterUrl">
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+                                </div>
+                                @foreach (var image in @Model.Images)
+                                {
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="@image.URL">
+                                    </div>
+                                    <div class="carousel-caption d-none d-md-block">
+                                    </div>
+
+                                }
+
+
+
+                            </div>
+                            
+                          
+                        </div>*@
+                    </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

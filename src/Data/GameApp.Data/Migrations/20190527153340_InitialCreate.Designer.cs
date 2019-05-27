@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameApp.Data.Migrations
 {
     [DbContext(typeof(GameAppContext))]
-    [Migration("20190524234134_ReleaseDatePropertyAddedInGameModel")]
-    partial class ReleaseDatePropertyAddedInGameModel
+    [Migration("20190527153340_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,8 @@ namespace GameApp.Data.Migrations
                     b.Property<string>("Description");
 
                     b.Property<string>("Name");
+
+                    b.Property<string>("PosterURL");
 
                     b.Property<DateTime?>("ReleaseDate");
 
@@ -104,6 +106,23 @@ namespace GameApp.Data.Migrations
                     b.HasIndex("GameId");
 
                     b.ToTable("Genres");
+                });
+
+            modelBuilder.Entity("GameApp.Data.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("GameId");
+
+                    b.Property<string>("URL");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -220,6 +239,14 @@ namespace GameApp.Data.Migrations
                 {
                     b.HasOne("GameApp.Data.Models.Game", "Game")
                         .WithMany("Genres")
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GameApp.Data.Models.Image", b =>
+                {
+                    b.HasOne("GameApp.Data.Models.Game", "Game")
+                        .WithMany("Images")
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

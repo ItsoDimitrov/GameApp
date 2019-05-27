@@ -8,6 +8,7 @@ namespace GameApp.Data.Models
     {
         public int Id { get; set; }
         public string URL { get; set; }
+
         public int GameId { get; set; }
         public Game Game { get; set; }
     }
