@@ -34,9 +34,7 @@ namespace GameApp.Web.Services
                 GameDescription = game.Description,
                 GameReleaseDate = game.ReleaseDate,
                 GameTitle = game.Name,
-                Genres = this._context.Genres.Where(g => g.GameId == game.Id)
-
-                //Images = game.Images
+                Genres = this._context.Genres.Where(g => g.GameId == game.Id),
             };
            
 
