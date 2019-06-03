@@ -1,7 +1,7 @@
 ﻿@model GameApp.Web.Models.ViewModels.Collections.HomeGamesViewModel
 @{
-    ViewData["Title"] = "Home Page";
-
+    ViewData["Title"] = "Home Page";     
+     
 }
 
 @* Game App Home Page *@
@@ -33,7 +33,10 @@
                             <img class="card-img-top" src="@game.GamePoster" alt="">
                             <div class="card-body">
                                 <h4 class="card-title">@game.GameName</h4>
-                                <p class="card-text">@game.GameDescription</p>
+                               @{
+                                   string shortGameDescription = @game.GameDescription.Split('.')[0];
+                               }
+                                <p class="card-text">@shortGameDescription</p>
                              
                             </div>
                             <div class="card-footer">
