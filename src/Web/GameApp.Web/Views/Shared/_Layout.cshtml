@@ -1,26 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    @* ASP.NET Core Header
-
-
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>@ViewData["Title"] - GameApp.Web</title>
-
-        <environment include="Development">
-            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
-        </environment>
-        <environment exclude="Development">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
-                  crossorigin="anonymous"
-                  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
-        </environment>
-        <link rel="stylesheet" href="~/css/site.css"/>
-    *@
-    @* Game App Header *@
+  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -28,17 +9,9 @@
 
     <title>GameApp</title>
 
-    <!-- Bootstrap core CSS -->
-    @*<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">*@
-    @*<link href="./lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">*@
+  
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    @*<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet">*@
 
-
-    @*Link bootstrap via cdn to work properly !! !!*@
-
-    <!-- Custom styles for this template -->
-    @*<link href="./css/heroic-features.css" rel="stylesheet">*@
 </head>
 <body background="/images/1.jpg">
 @* GAME APP NAVBAR *@
@@ -51,13 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">
                             Home
                             <span class="sr-only">(current)</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a>
                     </li>
                     @if (!User.Identity.IsAuthenticated)
                     {
@@ -71,7 +41,9 @@
                     }
                     else
                     {
-                            
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Category" asp-action="Categories">Categories</a>
+                        </li>
                         <li class="nav-item">
                             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post" >
                                 <button type="submit" class="nav-link btn btn-link">Logout</button>

@@ -21,5 +21,6 @@ namespace GameApp.Web.Controllers
             var gameDetailsViewModel = this._gameService.GetGameDetails(id);
             return View(gameDetailsViewModel);
         }
+
     }
 }

@@ -1,0 +1,16 @@
+﻿@model GameApp.Web.Models.ViewModels.Collections.GamesCategoriesViewModel
+@{
+    ViewData["Title"] = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<ul class="list-group jumbotron my-4 bg-dark">
+    @foreach (var category in @Model.Categories)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-dark">
+            <a asp-controller="" asp-action="">@category.Tag</a>
+            @*<span class=" badge-pill badge-dark">@category.Count</span>*@
+        </li>
+    }
+  
+</ul>
+
