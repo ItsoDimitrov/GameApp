@@ -10,5 +10,7 @@ namespace GameApp.Web.Services.Interfaces
     public interface IGameService
     {
         GameDetailViewModel GetGameDetails(int id);
+        GamesByGenreViewModel GetGamesByGenre(string genre);
+
     }
 }

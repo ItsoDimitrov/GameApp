@@ -44,5 +44,24 @@ namespace GameApp.Web.Services
             return gameDetailsViewModel;
 
         }
+
+        public GamesByGenreViewModel GetGamesByGenre(string genre)
+        {
+            
+            var gamesByGivenGenre = this._context.Genres.Where(c => c.Tag == genre).Select(g => new GameByGenreViewModel
+            {
+                Id = g.GameId,
+                GameDescription = g.Game.Description,
+                GameName = g.Game.Name,
+                GamePoster = g.Game.PosterURL
+            });
+
+            var gamesByGivenGenreViewModel = new GamesByGenreViewModel
+            {
+                GamesByGenre = gamesByGivenGenre
+            };
+
+            return gamesByGivenGenreViewModel;
+        }
     }
 }

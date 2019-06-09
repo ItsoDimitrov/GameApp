@@ -7,7 +7,7 @@
     @foreach (var category in @Model.Categories)
     {
         <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-dark">
-            <a asp-controller="" asp-action="">@category.Tag</a>
+            <a asp-controller="Game" asp-action="GamesByGenre" asp-route-genre="@category.Tag" >@category.Tag</a>
             @*<span class=" badge-pill badge-dark">@category.Count</span>*@
         </li>
     }

@@ -1,0 +1,31 @@
+﻿@model GameApp.Web.Models.ViewModels.Collections.GamesByGenreViewModel
+@{
+    ViewData["Title"] = "GamesByGenre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GamesByGenre</h1>
+<div class="row text-center">
+
+    @foreach (var game in @Model.GamesByGenre)
+    {
+
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100 card badge-dark">
+                <img class="card-img-top" src="@game.GamePoster" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">@game.GameName</h4>
+                    @{
+                        string shortGameDescription = @game.GameDescription.Split('.')[0];
+                    }
+                    <p class="card-text">@shortGameDescription</p>
+                             
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Game" asp-action="Details" asp-route-id="@game.Id" class="btn btn-primary">Find Out More!</a>
+                </div>  
+            </div>
+        </div>
+    }
+
+</div>
