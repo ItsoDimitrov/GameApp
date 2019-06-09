@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GameApp.Web.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GameApp.Web.Controllers
@@ -15,7 +16,7 @@ namespace GameApp.Web.Controllers
         {
             _categoryService = categoryService;
         }
-
+        [Authorize]
         public IActionResult Categories()
         {
             var categoriesViewModel = this._categoryService.AllCategories();

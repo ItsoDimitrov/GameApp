@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GameApp.Web.Models;
 using GameApp.Web.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GameApp.Web.Controllers
 {
@@ -17,7 +18,6 @@ namespace GameApp.Web.Controllers
         {
             _homeService = homeService;
         }
-       
         public IActionResult Index()
         {
             var indexGamesViewModel = _homeService.GetIndexGames();
