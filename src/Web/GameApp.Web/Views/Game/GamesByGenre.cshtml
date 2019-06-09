@@ -4,7 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>GamesByGenre</h1>
+@{
+    var searchedGenre =@Context.Request.Query["genre"].ToString();
+}
+<h1 class="text-info">Games in |@searchedGenre| Category</h1>
 <div class="row text-center">
 
     @foreach (var game in @Model.GamesByGenre)
