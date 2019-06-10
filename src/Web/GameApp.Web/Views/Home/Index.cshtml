@@ -1,12 +1,12 @@
 ﻿@model GameApp.Web.Models.ViewModels.Collections.HomeGamesViewModel
 @{
-    ViewData["Title"] = "Home Page";     
-     
+    ViewData["Title"] = "Home Page";
+
 }
 
 @* Game App Home Page *@
     <div class="container">
-
+       
         <!-- Jumbotron Header -->
         <header class="jumbotron my-4">
             @if (!User.Identity.IsAuthenticated)

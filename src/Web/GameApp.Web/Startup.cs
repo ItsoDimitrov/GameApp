@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GameApp.Data.Models;
+using GameApp.Web.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -43,17 +44,22 @@ namespace GameApp.Web
                 options.UseSqlServer(
                     this.Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<GameAppUser>(opt =>
-                {
-                    opt.Password.RequireDigit = false;
-                    opt.Password.RequireLowercase = false;
-                    opt.Password.RequiredLength = 3;
-                    opt.Password.RequireNonAlphanumeric = false;
-                    opt.Password.RequireUppercase = false;
-                    opt.Password.RequiredUniqueChars = 0;
-                    
-                })
+            //Working with Administrator role 
+            services.AddDefaultIdentity<GameAppUser>().AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<GameAppContext>();
+
+
+            //services.AddDefaultIdentity<GameAppUser>(opt =>
+            //    {
+            //        opt.Password.RequireDigit = false;
+            //        opt.Password.RequireLowercase = false;
+            //        opt.Password.RequiredLength = 3;
+            //        opt.Password.RequireNonAlphanumeric = false;
+            //        opt.Password.RequireUppercase = false;
+            //        opt.Password.RequiredUniqueChars = 0;
+
+            //    })
+            //    .AddEntityFrameworkStores<GameAppContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -65,7 +71,7 @@ namespace GameApp.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider, UserManager<GameAppUser> _userManager)
         {
             if (env.IsDevelopment())
             {
@@ -79,12 +85,13 @@ namespace GameApp.Web
                 app.UseHsts();
             }
 
+            //RoleSeeder.Seed(provider, _userManager);
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
             app.UseAuthentication();
-
+    
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
