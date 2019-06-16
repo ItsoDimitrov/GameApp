@@ -45,7 +45,15 @@ namespace GameApp.Web
                     this.Configuration.GetConnectionString("DefaultConnection")));
 
             //Working with Administrator role 
-            services.AddDefaultIdentity<GameAppUser>().AddRoles<IdentityRole>()
+            services.AddDefaultIdentity<GameAppUser>(opt =>
+                {
+                    opt.Password.RequireDigit = false;
+                    opt.Password.RequireLowercase = false;
+                    opt.Password.RequiredLength = 3;
+                    opt.Password.RequireNonAlphanumeric = false;
+                    opt.Password.RequiredUniqueChars = 0;
+                    opt.Password.RequireUppercase = false;
+                }).AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<GameAppContext>();
 
 
@@ -71,7 +79,7 @@ namespace GameApp.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider, UserManager<GameAppUser> _userManager)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider, UserManager<GameAppUser> userManager)
         {
             if (env.IsDevelopment())
             {
@@ -84,8 +92,9 @@ namespace GameApp.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            //Seed roles and user in that role
+            //RoleSeeder.Seed(provider, userManager);
 
-            //RoleSeeder.Seed(provider, _userManager);
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -94,9 +103,18 @@ namespace GameApp.Web
     
             app.UseMvc(routes =>
             {
+
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+             
+
             });
         }
     }

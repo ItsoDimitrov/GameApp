@@ -26,10 +26,10 @@ namespace GameApp.Web.Middleware
         {
 
             var roleManager = provider.GetService<RoleManager<IdentityRole>>();
-            var adminRoleExists = roleManager.RoleExistsAsync("Administrator").Result;
+            var adminRoleExists = roleManager.RoleExistsAsync("Admin").Result;
             if (!adminRoleExists)
             {
-                roleManager.CreateAsync(new IdentityRole("Administrator")).GetAwaiter().GetResult();
+                roleManager.CreateAsync(new IdentityRole("Admin")).GetAwaiter().GetResult();
             }
             SeedAdminUser(_userManager);
             
@@ -41,8 +41,8 @@ namespace GameApp.Web.Middleware
             var password = "123456admin";
             var adminUser = new GameAppUser
             {
-                UserName = "testadmin@abv.bg",
-                Email = "testadmin@abv.bg",
+                UserName = "testadmin@gmail.com",
+                Email = "testadmin@gmail.com",
                 
             };
 
@@ -50,7 +50,7 @@ namespace GameApp.Web.Middleware
 
             if (result.Succeeded)
             {
-                 _userManager.AddToRoleAsync(adminUser, "Administrator");
+                 _userManager.AddToRoleAsync(adminUser, "Admin");
             }
         }
 
