@@ -9,9 +9,10 @@ namespace GameApp.Web.Areas.Administrator.Controllers
 {
     [Area("Administrator")]
     [Authorize(Roles = "Admin")]
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult AllUsers()
         {
             return View();
         }
