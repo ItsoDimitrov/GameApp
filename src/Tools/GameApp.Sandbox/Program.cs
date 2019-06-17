@@ -31,20 +31,13 @@ namespace GameApp.Sandbox
 
         private static void SandboxCode(IServiceProvider serviceProvider)
         {
-            //var db = serviceProvider.GetService<GameAppContext>();
+            //var db = serviceProvider.GetService<GameAppContext>();           
             //var game = db.Games.FirstOrDefault(g => g.Id == 9);
             //var gameGenres = db.Genres.Where(g => g.GameId == game.Id);
             //foreach (var gameGenre in gameGenres)
             //{
             //    Console.WriteLine(gameGenre);
-            //}
-            string s =
-                "A tactical game combining the turn-based combat of XCOM with story, exploration, stealth, and strategy. Take control of a team of Mutants navigating a post-human Earth.";
-
-            int start = s.IndexOf(".") + 1;
-            int end = s.LastIndexOf(".");
-            string result = s.Substring(start, end - start);
-            Console.WriteLine(result);
+            //}          
             //var game = new Game
             //{
             //    Name = "Interstellar Transport Company",

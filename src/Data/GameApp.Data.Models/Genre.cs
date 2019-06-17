@@ -11,6 +11,5 @@ namespace GameApp.Data.Models
         public int GameId { get; set; }
         public Game Game { get; set; }
 
-
     }
 }
